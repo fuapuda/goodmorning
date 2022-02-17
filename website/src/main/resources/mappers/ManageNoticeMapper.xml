@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.ManageNoticeMapper">
+
+    <!--  获取发布的中标信息  -->
+    <!--  List<ManageNotice> findNoticeList()  -->
+    <select id="findNoticeList" resultType="com.example.website.entity.ManageNotice">
+        SELECT
+            id, title,
+            gmt_create AS gmtCreate
+        FROM
+            manage_notice
+        ORDER BY
+            gmtCreate DESC
+    </select>
+
+    <!--  根据id查询中标信息详情  -->
+    <!--  ManageNotice findById(String id)  -->
+    <select id="findById" resultType="com.example.website.entity.ManageNotice">
+        SELECT
+            title, content,
+            gmt_create AS gmtCreate
+        FROM
+            manage_notice
+        WHERE
+            id=#{id}
+        ORDER BY
+            gmtCreate DESC
+    </select>
+</mapper>

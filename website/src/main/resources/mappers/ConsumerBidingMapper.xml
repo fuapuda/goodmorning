@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.ConsumerBidingMapper">
+    <!--  添加一条投标信息  -->
+    <!--  Integer insert(ConsumerBiding consumerBiding)  -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+            consumer_biding(
+            tb_id, mb_id,
+            companyName, username,
+            file, gmt_create
+        ) VALUES (
+             #{tbId}, #{mbId},
+             #{companyName}, #{username},
+             #{file}, #{gmtCreate}
+        )
+    </insert>
+
+    <!--  根据 companyName 和 String mbId 查询  -->
+    <!--  ConsumerBiding findByCompanyNameAndMbId(String companyName, String mbId)  -->
+    <select id="findByCompanyNameAndMbId" resultType="com.example.website.entity.ConsumerBiding">
+        SELECT
+            id
+        FROM
+            consumer_biding
+        WHERE
+            companyName=#{companyName} AND mb_id=#{mbId}
+    </select>
+
+    <!--  修改file值  -->
+    <!--  Integer updateFile(ConsumerBiding consumerBiding)  -->
+    <update id="updateFile">
+        UPDATE
+            consumer_biding
+        SET
+            file=#{file}, gmt_create=#{gmtCreate},
+            gmt_modified=#{gmtModified}
+        WHERE
+            companyName=#{companyName} AND mb_id=#{mbId}
+    </update>
+</mapper>

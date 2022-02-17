@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.TbidderMapper">
+    <!--  添加一条企业信息  -->
+    <!--  Integer insert(Tbidder tbidder)  -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO
+            tbidder
+        (
+            username, password,
+            salt, contacts_name,
+            company_name, phone,
+            file, is_delete,
+            gmt_create, gmt_modified
+        )VALUES (
+            #{username}, #{password},
+            #{salt}, #{contactsName},
+            #{companyName}, #{phone},
+            #{file}, #{isDelete},
+            #{gmtCreate}, #{gmtModified}
+        )
+    </insert>
+
+    <!--  根据username查询企业信息  -->
+    <!--  Tbidder findByUsername(String username)  -->
+    <select id="findByUsername" resultType="com.example.website.entity.Tbidder">
+        SELECT
+            id, username,
+            password, salt,
+            contacts_name AS contactsName,  company_name AS companyName,
+            is_delete AS isDelete
+        FROM
+            tbidder
+        WHERE
+            username=#{username}
+    </select>
+
+    <!--  根据companyName查询企业是否存在 -->
+    <!--  Tbidder findByCompanyName(String companyName)  -->
+    <select id="findByCompanyName" resultType="com.example.website.entity.Tbidder">
+        SELECT
+            id
+        FROM
+            tbidder
+        WHERE
+            company_name=#{companyName}
+    </select>
+</mapper>

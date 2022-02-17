@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公华建筑设计有限公司</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #bg {
+            position: fixed;
+            opacity: 0.3;
+        }
+
+        #log {
+            width: 480px;
+            height: 335px;
+            border: solid 0px red;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 8px;
+            left: 50%;
+            top: 25%;
+            margin-left: -240px;
+        }
+
+        #log h3 {
+            text-align: center;
+            font-size: 28px;
+            margin: 30px 0;
+        }
+
+        #log div:first-child {
+            margin-top: 30px;
+        }
+
+        #log div {
+            margin: 20px 0;
+        }
+
+        #log form {
+            margin-left: 30px;
+        }
+
+        #log .txt {
+            width: 400px;
+            padding: 8px 10px;
+            border: solid 1px #ccc;
+        }
+
+        #log .btn {
+            padding: 10px 19px;
+            border-radius: 6px;
+            border: solid 1px #555;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #log .btn:hover {
+            color: #fff;
+            background-color: #555;
+        }
+    </style>
+    <script src="./js/vendor/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<!-- 1.使用img
+     2.使用背景 -->
+<img id="bg"
+     width="100%"
+     src="./img/bg/testimonial-bg.jpg"
+     alt="">
+<div id="log">
+    <h3>登录</h3>
+    <hr>
+    <form id="login">
+        <div>
+            <input class="txt"
+                   type="text"
+                   placeholder="请输入用户名"
+                   name="username">
+        </div>
+        <div>
+            <input class="txt"
+                   type="text"
+                   placeholder="请输入密码"
+                   name="password">
+        </div>
+        <div>
+            <input class="btn"
+                   type="button"
+                   onclick="login()"
+                   value="登录">
+            <input class="btn"
+                   type="button"
+                   onclick="register()"
+                   value="注册">
+            <input class="btn"
+                   type="button"
+                   onclick="back()"
+                   value="返回">
+        </div>
+<!--        <div>-->
+<!--            <input class="btn"-->
+<!--                   type="button"-->
+<!--                   onclick="register()"-->
+<!--                   value="注册">-->
+<!--        </div>-->
+    </form>
+</div>
+<script>
+    function login() {
+        var formData = new FormData(document.querySelector("#login"));//获取form值
+        $.ajax({
+            url: "/tbidders/login",
+            type: "post",
+            data: formData,
+            processData: false,  // 不处理数据
+            contentType: false,   // 不设置内容类型
+            success: function (r) {
+                if (r.state == 2000) {
+                    alert("登录成功")
+                    location.href = '/bidding_project.html'
+
+                } else {
+                    alert(r.message)
+                }
+            }
+        });
+    }
+    function register() {
+        $.ajax({
+            success: function () {
+                location.href = '/register.html'
+            }
+        });
+    }
+    function back() {
+        $.ajax({
+            success: function () {
+                location.href = '/index.html'
+            }
+        });
+    }
+</script>
+</body>
+</html>

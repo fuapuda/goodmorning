@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.NewsMapper">
+    <!--  根据新闻类别查询新闻  -->
+    <!--  List<News> findByCategory(Integer category)  -->
+    <select id="findByCategory" resultType="com.example.website.entity.News">
+        SELECT
+            id, category,
+            title, introduction,
+            gmt_create AS gmtCreate, image,
+            content
+        FROM
+            news
+        WHERE
+            status = 'Normal' AND category=#{category}
+        ORDER BY
+            gmt_create DESC
+    </select>
+
+    <!--  根据新闻类别获取最近发布的新闻  -->
+    <!--  List<News> findＬatelyNews(Integer category, Integer limit)  -->
+    <select id="findＬatelyNews" resultType="com.example.website.entity.News">
+        SELECT
+            id, category,
+            title, introduction,
+            gmt_create AS gmtCreate, image,
+            content
+        FROM
+            news
+        WHERE
+            status = 'Normal' AND category=#{category}
+        ORDER BY
+            gmt_create DESC
+        LIMIT #{limit};
+    </select>
+
+    <!--  根据id查询对应的新闻  -->
+    <!--  News findById(String id)  -->
+    <select id="findById" resultType="com.example.website.entity.News">
+        SELECT
+            title, gmt_create AS gmtCreate,
+            content
+        FROM
+            news
+        WHERE
+            status = 'Normal' AND id=#{id}
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.ManageQualificationsMapper">
+    <!--  获取企业资质信息  -->
+    <!--  List<ManageQualifications> findQualificationList();  -->
+    <select id="findQualificationList" resultType="com.example.website.entity.ManageQualifications">
+        SELECT
+            name, img
+        FROM
+            manage_qualifications
+        WHERE
+            is_deleted = 0 AND status = 'Normal'
+        ORDER BY
+            gmt_modified DESC
+    </select>
+</mapper>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>公华建筑设计有限公司</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <!-- Place favicon.png in the root directory -->
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+
+        <!-- preloader start -->
+        <div id="preloader">
+            <div class="preloader">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- preloader end  -->
+
+        <!-- header start -->
+        <header>
+            <div class="header-bottom-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="logo logo-2">
+                                <a href="index.html">
+                                    <h2>公华建筑设计有限公司</h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="main-menu f-left">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="introduction.html">企业概况</a>
+                                            <ul class="submenu">
+                                                <li><a href="introduction.html">企业简介</a></li>
+                                                <li><a href="qualification.html">企业资质</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">新闻中心</a>
+                                            <ul class="submenu" id="newsCategory">
+                                                <li v-for="newsCategory in newsCategoryList">
+                                                    <a v-bind:href="'news.html?category=' + newsCategory.id" v-text="newsCategory.name">综合新闻</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">产品系列</a>
+                                            <ul class="submenu" id="productCategory">
+                                                <li v-for="productCategory in productCategoryList">
+                                                    <a v-bind:href="'project.html?category=' + productCategory.id" v-text="productCategory.name">检测鉴定</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">企业招标</a>
+                                            <ul class="submenu">
+                                                <li><a href="invite_tenders.html">招标公告</a></li>
+                                                <li><a href="success_bid.html">中标公告</a></li>
+                                                <li><a href="bidding_project.html">投标入口</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">联系我们</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+
+        <main>
+            <!-- page title area start -->
+            <section class="page-title-area pt-160 pb-160" data-overlay="8" data-background="img/bg/page-title-bg.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page-title text-center">
+                                <div class="border-title">
+                                    <h1>企业概况</h1>
+                                </div>
+                                <h1>企业简介</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- page title area end -->
+
+            <!-- about start -->
+            <section class="about-area about-2 pt-120 pb-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="contact-left">
+                                <div class="contact-thumb-left">
+                                    <img src="img/about/about-bg-01.jpg" alt="image_not_found">
+                                    <div class="contact-shape"></div>
+                                </div>
+                                <div class="contact-thumb-right">
+                                    <img src="img/about/about-bg-02.jpg" alt="image_not_found">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 offset-xl-1 col-lg-6 pl-0">
+                            <div class="about-left pos-rel">
+                                <p>
+                                    公华建筑设计有限公司成立于1995 年，是一所从事专业检测鉴定、建筑设计、工程的公司。 总部设在广州，是立足于广东省，面向全国的企业。
+                                    公司一贯注重设计质量， 长期推行全面质量管理，并通过了ISO9001国际质量认证。 公司以先进的设计理念、丰富的设计经验、 出色的设计质
+                                    量及合理的建设成本控制措施、良好的设计服务信誉和口碑，在业内赢得了一致好评。 公司为适应市场的发展，吸纳了大批英才加盟， 具备了承
+                                    接大型复杂工程的能力、设计技术力量雄厚、专业配套齐全，拥有现 代化的设计和管理手段。目前全院拥有员工逾两百人， 专业技术人员约190
+                                    人，其中国家一级注册建筑师有12人；一级注册结构师8人；注册设备工程师4人；注册城市规划师4人；注册造价工程师2人，具有中、高级或以上
+                                    职称的设计师达80多人。公司设有总工室、质量技术部、设计支援部、经营拓展部、行政人事部、财务部、合同法务部等七个职能部门， 并分设规
+                                    划部、方案部、 建筑部、结构部、设备部、园林部、室内设计部等专业类别的设计部。 公司定位为技术型现代服务企业， 以" 为用户提供有价值
+                                    的服务" 为宗旨；以" 获得用户最高满意度" 为目标，于2017年通 过高新企业认证， 获颁“ 高新技术企业” 证书。我们专业技术团队用专业、
+                                    创新的思维面对每一项任务， 我们充分尊重客户的意见、 注重市场调查和策划咨询， 建立广泛的国际、国内技术协作网络， 使卓越的设计与市场
+                                    完美地结合， 缔造客户和设计师引以为荣的个性化世纪精品。
+                                    相信在我们的手中， 千千万万的城市， 将成为美丽、幸福和骄傲的乐土， 让每一座城市铭记你我。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- about end -->
+
+            <!-- counter start -->
+            <section class="counter-area counter-2 pt-120 pb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="counter-box text-center d-flex justify-content-center">
+                                <h1>28+</h1>
+                                <div class="counter-shape"></div>
+                                <div class="counter-right-text">
+                                    <p>项</p>
+                                    <p><span>专利</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="counter-box text-center d-flex justify-content-center">
+                                <h1>105+</h1>
+                                <div class="counter-right-text">
+                                    <p>奖项</p>
+                                    <p><span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="counter-box text-center d-flex justify-content-center">
+                                <h1>128+</h1>
+                                <div class="counter-right-text">
+                                    <p>个</p>
+                                    <p><span>项目</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="counter-box text-center d-flex justify-content-center">
+                                <h1>508+</h1>
+                                <div class="counter-right-text">
+                                    <p>个</p>
+                                    <p><span>工程师</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- counter end -->
+        </main>
+
+        <!-- footer start -->
+        <footer>
+            <div class="footer-area footer-height pt-40 pb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                            <div class="footer-widget footer-link">
+                                <h3>企业概况</h3>
+                                <ul>
+                                    <li><a href="introduction.html">企业简介</a></li>
+                                    <li><a href="qualification.html">企业资质</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                            <div class="footer-widget footer-link">
+                                <h3>新闻中心</h3>
+                                <ul>
+                                    <li><a href="news.html?category=1">综合新闻</a></li>
+                                    <li><a href="news.html?category=2">工程动态</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                            <div class="footer-widget footer-link">
+                                <h3>产品系列</h3>
+                                <ul>
+                                    <li><a href="project.html?category=1">检测鉴定</a></li>
+                                    <li><a href="project.html?category=2">建筑设计</a></li>
+                                    <li><a href="project.html?category=3">工程技术</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                            <div class="footer-widget footer-link">
+                                <h3>企业招标</h3>
+                                <ul>
+                                    <li><a href="invite_tenders.html">招标公告</a></li>
+                                    <li><a href="success_bid.html">中标公告</a></li>
+                                    <li><a href="login.html">投标入口</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area pt-20 pb-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright-text text-center">
+                                <p>Copyright by @ Bildhub - 2020.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- JS here -->
+        <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
+
+

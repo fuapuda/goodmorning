@@ -1,0 +1,280 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>公华建筑设计有限公司</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <!-- Place favicon.png in the root directory -->
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+
+    <!-- preloader start -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+
+    <!-- header start -->
+    <header>
+        <div class="header-bottom-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="logo logo-2">
+                            <a href="index.html">
+                                <h2>公华建筑设计有限公司</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="main-menu f-left">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="index.html">首页</a></li>
+                                    <li><a href="introduction.html">企业概况</a>
+                                        <ul class="submenu">
+                                            <li><a href="introduction.html">企业简介</a></li>
+                                            <li><a href="qualification.html">企业资质</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">新闻中心</a>
+                                        <ul class="submenu" id="newsCategory">
+                                            <li v-for="newsCategory in newsCategoryList">
+                                                <a v-bind:href="'news.html?category=' + newsCategory.id" v-text="newsCategory.name">综合新闻</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">产品系列</a>
+                                        <ul class="submenu" id="productCategory">
+                                            <li v-for="productCategory in productCategoryList">
+                                                <a v-bind:href="'project.html?category=' + productCategory.id" v-text="productCategory.name">检测鉴定</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">企业招标</a>
+                                        <ul class="submenu">
+                                            <li><a href="invite_tenders.html">招标公告</a></li>
+                                            <li><a href="success_bid.html">中标公告</a></li>
+                                            <li><a href="bidding_project.html">投标入口</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">联系我们</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+        <main>
+            <!-- page title area start -->
+            <section class="page-title-area pt-160 pb-160" data-overlay="8" data-background="img/bg/page-title-bg.jpg">
+                <div class="container" id="headerApp">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page-title text-center">
+                                <div class="border-title">
+                                    <h1>产品类别</h1>
+                                </div>
+                                <h1 v-text="title"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- page title area end -->
+
+            <!-- feature start -->
+            <section class="feature-area process-area gray-bg pt-120 pb-90" id="projectApp">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6" v-for="project in projects">
+                            <div class="feature-single mb-30">
+                                <div class="feature-thumb">
+                                    <img v-bind:src="project.img" alt="image_not_found">
+                                </div>
+                                <div class="feature-text">
+                                    <h2><a v-bind:href="'project-details.html?id=' + project.id" v-text="project.name">Interior Design</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="basic-pagination text-center mt-35">
+                                <ul>
+                                    <li><a href="#" v-on:click.prevent="loadProjects(prePage)"><i class="fas fa-angle-double-left"></i></a></li>
+                                    <li
+                                    v-for="pageNum in navigatepageNums"
+                                    v-bind:class="{'active': pageNum == currentPageNum}"
+                                    v-on:click.prevent="loadProjects(pageNum)"><a href="#" v-text="pageNum">01</a></li>
+                                    <li><a href="#" v-on:click.prevent="loadProjects(nextPage)"><i class="fas fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- feature end -->
+        </main>
+
+    <!-- footer start -->
+    <footer>
+        <div class="footer-area footer-height pt-40 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>企业概况</h3>
+                            <ul>
+                                <li><a href="introduction.html">企业简介</a></li>
+                                <li><a href="qualification.html">企业资质</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>新闻中心</h3>
+                            <ul>
+                                <li><a href="news.html?category=1">综合新闻</a></li>
+                                <li><a href="news.html?category=2">工程动态</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>产品系列</h3>
+                            <ul>
+                                <li><a href="project.html?category=1">检测鉴定</a></li>
+                                <li><a href="project.html?category=2">建筑设计</a></li>
+                                <li><a href="project.html?category=3">工程技术</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>企业招标</h3>
+                            <ul>
+                                <li><a href="invite_tenders.html">招标公告</a></li>
+                                <li><a href="success_bid.html">中标公告</a></li>
+                                <li><a href="login.html">投标入口</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area pt-20 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            <p>Copyright by @ Bildhub - 2020.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+        
+        <!-- JS here -->
+        <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vue.min.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+            let headerApp = new Vue({
+                el: "#headerApp",
+                data: {
+                    title: ""
+                },
+                methods: {
+                    loadTitle: function () {
+                        $.ajax({
+                            url:"/product_categorys/info",
+                            data: location.search.substr(1),
+                            success: function (r) {
+                                headerApp.title = r.data.name;
+                            }
+                        })
+                    }
+                },
+                created: function () {
+                    this.loadTitle();
+                }
+            })
+            let projectsApp = new Vue({
+                el: '#projectApp',
+                data: {
+                    projects: [],
+                    prePage: 0,
+                    nextPage: 0,
+                    navigatepageNums: [],
+                    currentPageNum: 0
+                },
+                methods: {
+                    loadProjects: function (page) {
+                        if (page < 1) {
+                            return;
+                        }
+                        $.ajax({
+                            url: '/projects/get_project_list',
+                            data: 'pageNum=' + page + "&" + location.search.substr(1),
+                            success: function (r) {
+                                projectsApp.projects = r.data.list;
+                                projectsApp.prePage = r.data.prePage;
+                                projectsApp.nextPage = r.data.nextPage;
+                                projectsApp.navigatepageNums = r.data.navigatepageNums;
+                                projectsApp.currentPageNum = r.data.pageNum;
+                            }
+                        });
+                    }
+                },
+                created: function () {
+                    this.loadProjects(1);
+                }
+            });
+
+        </script>
+    </body>
+</html>
+
+

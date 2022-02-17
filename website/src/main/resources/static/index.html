@@ -1,0 +1,485 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>公华建筑设计有限公司</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- preloader end  -->
+
+    <!-- header start -->
+    <header>
+        <div class="header-bottom-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="logo logo-2">
+                            <a href="index.html">
+                                <h2>公华建筑设计有限公司</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="main-menu f-left">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="index.html">首页</a></li>
+                                    <li><a href="introduction.html">企业概况</a>
+                                        <ul class="submenu">
+                                            <li><a href="introduction.html">企业简介</a></li>
+                                            <li><a href="qualification.html">企业资质</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">新闻中心</a>
+                                        <ul class="submenu" id="newsCategory">
+                                            <li v-for="newsCategory in newsCategoryList">
+                                                <a v-bind:href="'news.html?category=' + newsCategory.id" v-text="newsCategory.name">综合新闻</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">产品系列</a>
+                                        <ul class="submenu" id="productCategory">
+                                            <li v-for="productCategory in productCategoryList">
+                                                <a v-bind:href="'project.html?category=' + productCategory.id" v-text="productCategory.name">检测鉴定</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">企业招标</a>
+                                        <ul class="submenu">
+                                            <li><a href="invite_tenders.html">招标公告</a></li>
+                                            <li><a href="success_bid.html">中标公告</a></li>
+                                            <li><a href="bidding_project.html">投标入口</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">联系我们</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <main>
+        <!-- slider start -->
+        <section class="slider-area">
+            <div class="slider-active">
+                <div class="single-slider slider-height pos-rel d-flex align-items-center"
+                    data-background="img/bg/slider-bg-01.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-8">
+                                <div class="slider-content">
+                                    <h5 data-animation="fadeInUp" data-delay=".2s">检测鉴定</h5>
+                                    <h1 data-animation="fadeInUp" data-delay=".4s">杜绝一切不合格产品</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider slider-height pos-rel d-flex align-items-center"
+                     data-background="img/bg/slider-bg-03.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-8">
+                                <div class="slider-content">
+                                    <h5 data-animation="fadeInUp" data-delay=".2s">建筑设计</h5>
+                                    <h1 data-animation="fadeInUp" data-delay=".4s">构建你需要的一切</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider slider-height pos-rel d-flex align-items-center"
+                    data-background="img/bg/slider-bg-01.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-8">
+                                <div class="slider-content">
+                                    <h5 data-animation="fadeInUp" data-delay=".2s">工程技术</h5>
+                                    <h1 data-animation="fadeInUp" data-delay=".4s">为你提供优质的施工服务</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- slider end -->
+        
+        <div class="section section2">
+            <div class="contain">
+                <div class="index_sec">
+                    <div class="sec_box">
+                        <div class="main1396 homemagtop">
+                            <div class="homebt">
+                                <p class="homebtpp"><img src="./img/bg/xwline0.png">新闻</span>中心</span><img
+                                        src="./img/bg/xwline1.png"></p>
+                                <span class="homebtspan">News Center</span>
+                            </div>
+                            <div class="xwzxbot" id="xinwenApp">
+                                <div class="left xwzxbotle">
+                                    <div class="xwzxbotletop">
+                                        <img src="./img/bg/zhxwicn.png">
+                                        <span class="xwzxbotletopatv">综合新闻</span>
+                                        <a href="news.html?category=1" class="right">更多</a>
+                                    </div>
+                                    <div class="xinwen">
+                                        <div class="xinwensub" style="display: block">
+                                            <div class="owl-carousel xinwenlbt">
+                                                <div class="scaleimg item" v-for="xinwen in xinwensub">
+                                                    <a v-bind:href="'news_details.html?id=' + xinwen.id">
+                                                        <div class="tupian xwimg"><img v-bind:src="xinwen.image" alt=""></div>
+                                                        <p class="xwdtsj"><span>综合新闻</span>{{xinwen.gmtCreate.split(' ')[0]}}</p>
+                                                        <p class="overhide xwdtbt" v-text="xinwen.title">公司与中国环境科学研究院环境技术工程有限公司签署战略合作框架协议</p>
+                                                        <p class="overhidetwo xwdtjj" v-text="xinwen.introduction"> （刘一麟 讯）11月24日，公司与中国环境科学研究院环境技术工程有限公司签署战略合作协议。</p>
+                                                        <p class="xwdtjt"></p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right xwzxbotri">
+                                    <div class="xwzxbotletop">
+                                        <img src="./img/bg/tongzhiicn.png">工程动态<a href="news.html?category=2" class="right">更多</a>
+                                    </div>
+                                    <div class="xwzxbotribot wow fadeInRight" data-wow-duration="2s"
+                                        data-wow-delay="1s">
+                                        <ul>
+                                            <li v-for="dynamic in dynamics">
+                                                <a v-bind:href="'news_details.html?id=' + dynamic.id">
+                                                    <div class="tzggsj">
+                                                        <p>{{dynamic.gmtCreate[1]}}/{{dynamic.gmtCreate[2]}}</p>
+                                                        <span>{{dynamic.gmtCreate[0]}}</span>
+                                                    </div>
+                                                    <p class="overhidetwo tzggsjbt" v-text="dynamic.title">济青高速公路改扩建工程喜获2020-2021年度“李春奖”</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- services start -->
+        <section class="services-area gray-bg pt-120 pb-90">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="homebt">
+                        <p class="homebtpp"><img src="./img/bg/xwline0.png">产品</span>系列</span><img
+                                src="./img/bg/xwline1.png"></p>
+                        <span class="homebtspan">News Center</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6" style="margin-left:-16px; margin-right: -16px;">
+                        <div class="blog-item mb-30">
+                            <div class="blog-image">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-tag mb-125">
+                                </div>
+                                <div class="blog-text mb-65">
+                                    <h2><a href="blog-details.html">检测鉴定</a></h2>
+                                    <p>主营:建筑结构可靠性鉴定、房屋质量安全鉴定、施工周边房屋安全鉴定、拆改房屋安全鉴定</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6" style="margin-left:-16px; margin-right: -16px;">
+                        <div class="blog-item mb-30">
+                            <div class="blog-image blog-image-2">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-tag blog-tag-2 mb-125">
+                                </div>
+                                <div class="blog-text mb-65">
+                                    <h2><a href="blog-details.html">建筑设计</a></h2>
+                                    <p>主营:建筑工程、电子与智能化工程、建筑装修装饰工程、钢结构、消防设施工程、环保工程、建筑机电设备安装工程</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6" style="margin-left:-16px; margin-right: -16px;">
+                        <div class="blog-item mb-30">
+                            <div class="blog-image blog-image-3">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-tag blog-tag-3 mb-125">
+                                </div>
+                                <div class="blog-text mb-65">
+                                    <h2><a href="blog-details.html">工程技术</a></h2>
+                                    <p>主营:工程勘察设计、房屋建筑工程施工、工程测量、测绘、分析、主体工程桩基基坑检测</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- services end -->
+
+        <!-- testimonial start -->
+        <section class="testimonial-area">
+            <div class="homebt">
+                <p class="homebtpp"><img src="./img/bg/xwline0.png">企业</span>概况</span><img src="./img/bg/xwline1.png">
+                </p>
+                <span class="homebtspan">Enterprise Profile</span>
+            </div>
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-xl-6">
+                        <div class="counter-left counter-height pt-125 pb-125">
+                            <div class="counter-content">
+                                <ul>
+                                    <li>
+                                        <div class="counter-box">
+                                            <h1><span>508</span>+</h1>
+                                            <div class="counter-right-text">
+                                                <p>工程师</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="counter-box">
+                                            <h1><span>128</span>+</h1>
+                                            <div class="counter-right-text">
+                                                <p>项目</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="counter-box">
+                                            <h1><span>105</span>+</h1>
+                                            <div class="counter-right-text">
+                                                <p>奖项</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="counter-box">
+                                            <h1><span>29</span>+</h1>
+                                            <div class="counter-right-text">
+                                                <p>专利</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="testimonial-right testimonial-height">
+                            <div class="testimonial-active owl-carousel">
+                                <div class="testimonial-single text-center">
+                                    <div class="testimonial-thumb">
+                                        <img src="img/testimonial/testi-01.jpg" alt="image_not_found">
+                                    </div>
+                                    <div class="testimonial-text">
+                                        <h3>创始人</h3>
+                                        <span>founder & Co</span>
+                                        <p>疼痛本身很重要，所以疼痛是 adipisizing，但我给它时间以一些巨大的痛苦和痛苦回到它。为了在大多数情况下，我们中的任何人都会从事任何类型的工作，除非利用它的目标。但电影中的痛苦是难以谴责的，在快乐中它想摆脱痛苦的痛苦，没有结果。他们是唯一渴望百叶窗的人，他们看不见，他们有错，他们离开了他们的办公室，抚慰了灵魂，这是辛劳的罪恶感，他们厌倦了职责</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-single text-center">
+                                    <div class="testimonial-thumb">
+                                        <img src="img/testimonial/testi-01.jpg" alt="image_not_found">
+                                    </div>
+                                    <div class="testimonial-text">
+                                        <h3>rasalina De Willam</h3>
+                                        <span>创始人</span>
+                                        <p>疼痛本身很重要，所以疼痛是 adipisizing，但我给它时间以一些巨大的痛苦和痛苦回到它。为了在大多数情况下，我们中的任何人都会从事任何类型的工作，除非利用它的目标。但电影中的痛苦是难以谴责的，在快乐中它想摆脱痛苦的痛苦，没有结果。他们是唯一渴望百叶窗的人，他们看不见，他们有错，他们离开了他们的办公室，抚慰了灵魂，这是辛劳的罪恶感，他们厌倦了职责</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-single text-center">
+                                    <div class="testimonial-thumb">
+                                        <img src="img/testimonial/testi-01.jpg" alt="image_not_found">
+                                    </div>
+                                    <div class="testimonial-text">
+                                        <h3>rasalina De Willam</h3>
+                                        <span>创始人</span>
+                                        <p>疼痛本身很重要，所以疼痛是 adipisizing，但我给它时间以一些巨大的痛苦和痛苦回到它。为了在大多数情况下，我们中的任何人都会从事任何类型的工作，除非利用它的目标。但电影中的痛苦是难以谴责的，在快乐中它想摆脱痛苦的痛苦，没有结果。他们是唯一渴望百叶窗的人，他们看不见，他们有错，他们离开了他们的办公室，抚慰了灵魂，这是辛劳的罪恶感，他们厌倦了职责</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial end -->
+
+    </main>
+
+    <!-- footer start -->
+    <footer>
+        <div class="footer-area footer-height pt-40 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>企业概况</h3>
+                            <ul>
+                                <li><a href="introduction.html">企业简介</a></li>
+                                <li><a href="qualification.html">企业资质</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>新闻中心</h3>
+                            <ul>
+                                <li><a href="news.html?category=1">综合新闻</a></li>
+                                <li><a href="news.html?category=2">工程动态</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>产品系列</h3>
+                            <ul>
+                                <li><a href="project.html?category=1">检测鉴定</a></li>
+                                <li><a href="project.html?category=2">建筑设计</a></li>
+                                <li><a href="project.html?category=3">工程技术</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 offset-xl-1 col-lg-6 col-md-6 pr-0 mb-40">
+                        <div class="footer-widget footer-link">
+                            <h3>企业招标</h3>
+                            <ul>
+                                <li><a href="invite_tenders.html">招标公告</a></li>
+                                <li><a href="success_bid.html">中标公告</a></li>
+                                <li><a href="login.html">投标入口</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area pt-20 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            <p>Copyright by @ Bildhub - 2020.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        let xinwenApp = new Vue({
+            el: "#xinwenApp",
+            data: {
+                xinwensub: [],
+                dynamics: []
+            },
+            methods: {
+                loadXinwensub: function () {
+                    $.ajax({
+                        url: '/news/get_lately_news',
+                        data: "category=1&limit=8",
+                        type: 'get',
+                        traditional: true,
+                        success: function (r) {
+                            xinwenApp.xinwensub = r;
+                            xinwenApp.$nextTick(function () {
+                                var xinwenlbt = $('.xinwenlbt');
+                                xinwenlbt.owlCarousel({
+                                    items: 2,
+                                    loop: true,
+                                    nav: false,
+                                    autoplay: true,
+                                    autoplayTimeout: 5000,
+                                    dotsSpeed: 800,
+                                    smartSpeed: 800,
+                                    margin: 40
+                                });
+                            })
+                        }
+                    });
+                },
+                loadDynamics: function () {
+                    $.ajax({
+                        url: '/news/get_lately_news',
+                        data: "category=2&limit=7",
+                        type: 'get',
+                        traditional: true,
+                        success: function (r) {
+                            for (var i = 0; i < r.length; i++) {
+                                r[i].gmtCreate = r[i].gmtCreate.split(" ")[0].split("-");
+                            }
+                            xinwenApp.dynamics = r;
+                        }
+                    });
+                },
+            },
+            created: function () {
+                this.loadXinwensub();
+                this.loadDynamics();
+            }
+        });
+    </script>
+</body>
+
+</html>

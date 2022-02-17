@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公华建筑设计有限公司</title>
+    <style>
+        #main {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #main img{
+            width: 100%;
+            height: 600px;
+        }
+        .fyxwxqtitle {
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .fyxwxqtitle h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: normal;
+        }
+        .fyxwxqtitle p span {
+            font-size: 14px;
+            color: #999999;
+            margin: 0 10px;
+            display: inline-block;
+        }
+    </style>
+    <script src="./js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+</head>
+<body>
+<div id="main">
+    <div class="fyxwxqtitle">
+        <h2 v-text="name"></h2>
+        <p><span>发布日期：{{gmtCreate}}</span></p>
+    </div>
+    <img v-bind:src="img"></img>
+    <div v-html="content"></div>
+</div>
+<script>
+    let mainApp = new Vue({
+        el: "#main",
+        data: {
+            img: "",
+            name: "",
+            gmtCreate: "",
+            description: "",
+        },
+        methods: {
+            loadNewsDetails(){
+                $.ajax({
+                    url: "/projects/details",
+                    data: location.search.substr(1),
+                    type: "get",
+                    success: function (r) {
+                        mainApp.name = r.data.name;
+                        mainApp.gmtCreate = r.data.gmtCreate
+                        mainApp.content = r.data.description
+                        mainApp.img = r.data.img
+                    }
+                });
+            }
+        },
+        created: function () {
+            this.loadNewsDetails();
+        }
+    })
+</script>
+</body>
+</html>

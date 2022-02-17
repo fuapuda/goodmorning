@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.ProductCategoryMapper">
+    <!--  根据id查询产品类别信息  -->
+    <!--  ProductCategory findById(String id)  -->
+    <select id="findById" resultType="com.example.website.entity.ProductCategory">
+        SELECT
+            id, name
+        FROM
+            department
+        WHERE
+            id=#{id}
+    </select>
+
+    <!--  获取所有的产品类别信息  -->
+    <!--  List<ProductCategory> findProductCategoryList()  -->
+    <select id="findProductCategoryList" resultType="com.example.website.entity.ProductCategory">
+        SELECT
+            id, name,
+            content
+        FROM
+            department
+    </select>
+</mapper>

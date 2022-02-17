@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公华建筑设计有限公司</title>
+    <style>
+        #bg {
+            position: fixed;
+            opacity: 0.3;
+        }
+
+        #log {
+            width: 480px;
+            border: solid 0px red;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 8px;
+            left: 50%;
+            top: 25%;
+            margin-left: -240px;
+        }
+
+        #log h3 {
+            text-align: center;
+            font-size: 28px;
+            margin: 30px 0;
+        }
+
+        #log div:first-child {
+            margin-top: 30px;
+        }
+
+        #log div {
+            margin: 20px 0;
+        }
+
+        #log form {
+            margin-left: 30px;
+        }
+
+        #log .txt {
+            width: 400px;
+            padding: 8px 10px;
+            border: solid 1px #ccc;
+        }
+
+        #log .btn {
+            padding: 10px 19px;
+            border-radius: 6px;
+            border: solid 1px #555;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #log .btn:hover {
+            color: #fff;
+            background-color: #555;
+        }
+    </style>
+    <script src="./js/vendor/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<!-- 1.使用img
+     2.使用背景 -->
+<img id="bg"
+     width="100%"
+     src="./img/bg/testimonial-bg.jpg"
+     alt="">
+<div id="log">
+    <h3>注册</h3>
+    <hr>
+    <form id="register">
+        <div>
+            <input class="txt"
+                   type="text"
+                   placeholder="请输入用户名"
+                   id="username"
+                   name="username">
+        </div>
+        <div>
+            <input class="txt"
+                   type="password"
+                   placeholder="请输入密码"
+                   id="password"
+                   name="password">
+        </div>
+        <div>
+            <input class="txt"
+                   type="text"
+                   placeholder="请输入联系人姓名"
+                   name="contactsName">
+        </div>
+        <div>
+            <input class="txt"
+                   type="text"
+                   placeholder="请输入联系电话"
+                   name="phone">
+        </div>
+        <div>
+            <input class="txt"
+                   type="text"
+                   placeholder="请输入公司名称(全称)"
+                   name="companyName">
+        </div>
+        <div>
+            <input class="txt"
+                   type="file"
+                   placeholder="上传附件"
+                   name="fileName">
+        </div>
+        <div>
+            <input class="btn"
+                   type="button"
+                   onclick="register()"
+                   value="提交">
+            <input class="btn"
+                   type="button"
+                   onclick="local()"
+                   value="登录">
+        </div>
+    </form>
+</div>
+<script>
+    function register() {
+        var formData = new FormData(document.querySelector("#register"));//获取form值
+        $.ajax({
+            url: "/tbidders/register",
+            type: "post",
+            data: formData,
+            processData: false,  // 不处理数据
+            contentType: false,   // 不设置内容类型
+            success:function(r){
+                if(r.state == 2000) {
+                    alert("注册成功")
+                    location.href = '/login.html'
+                } else {
+                    alert(r.message);
+                }
+            }
+        });
+    }
+    function local() {
+        $.ajax({
+            success: function () {
+                location.href = '/login.html'
+            }
+        });
+    }
+</script>
+</body>
+</html>

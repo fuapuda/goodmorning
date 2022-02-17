@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.website.mapper.ManageItemMapper">
+
+    <!--  查询属于department的项目信息  -->
+    <!--  List<ManageItem> findProjectList(String department)  -->
+    <select id="findProjectList" resultType="com.example.website.entity.ManageItem">
+        SELECT
+            id, name,
+            img
+        FROM
+            manage_item
+        WHERE
+            is_deleted = 0 AND status = 'Normal' AND department=#{department}
+        ORDER BY
+            gmt_create DESC
+    </select>
+
+    <!--  获取项目详情  -->
+    <!--  ManageItem findById(String id)  -->
+    <select id="findById" resultType="com.example.website.entity.ManageItem">
+        SELECT
+            id, name,
+            img, gmt_create AS gmtCreate,
+            description
+        FROM
+            manage_item
+        WHERE
+            is_deleted = 0 AND status = 'Normal' AND id=#{id}
+    </select>
+</mapper>
